@@ -25,7 +25,7 @@ The priority of asynchronous task depends on what type of task it is, if it is p
   
   })();
 
-Outout:
+Output:
 this is the first
 this is just a message
 this is the end
