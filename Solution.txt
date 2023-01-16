@@ -1,0 +1,39 @@
+1. The first question you will have to answer is explaining JS event loop, clarifying the synchronous and asynchronous parts, queues, priority, with examples. *Write your answer as if it were for a real interview.*
+
+Ans:-> Event loop in JS can be understood as a while loop that takes the events from the queue to the stack. Once the synchronous operations are finished that is the stack is cleared,  then the event loop will transfer all the asynchronous events to the stack for the execution. Since JS doesn't have an asynchronous operation, it does so as Macro Task Queue.
+
+Synchronous parts in JS are those parts that run once at a time while asynchronous refers to those that run simultaneously, hence altering the flow of execution. So, in JS anything asynchronous will run only when all the synchronous finishes its execution. This will lead back to the first statement of the event loop transferring the events from queue to stack, here these events imply the asynchronous events and the priority of these tasks when any multiple exists will be on the basis of first come first serve. All the descriptions can be understood more clearly from the following example:
+
+
+
+const a=5;
+
+const b=3;
+
+setTimeout(function(){
+
+console.log('firstfunction')
+
+},1000);
+
+setTimeout(function(){
+
+console.log('secondfunction')
+
+},0);
+
+const c=23;
+
+
+
+In the above code snippet first, second and last lines are synchronous parts, while the two functions are asynchronous parts. So at first, these synchronous parts will run at first, after that two asynchronous functions will be sent to the stack by event loop based on the time, here the second one will be executed since it has a lesser timeout and at the end, the upper function will be executed. Before execution, these functions are placed in Macrotask queue by the JS engine.
+
+
+
+2. The follow up question is how may we convert a sync operation/function to become asynchronous?
+
+Ans:-> Basically there are two main options: Macrotask and Microtask using which we can convert synchronous operations or functions to become asynchronous.
+
+Macrotask: In this operation  setInterval() and setTimeout() 
+
+Microtask: Promise and async/await
