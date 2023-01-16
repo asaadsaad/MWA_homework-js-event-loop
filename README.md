@@ -9,7 +9,25 @@ Answer
 -	Asynchronous means more than one process running simultaneously whereas Synchronous means one process is executing at a time.
 -	Macro task Queues are queues that are not part of the JavaScript engine but added by the web API to extend the JavaScript feature and has least priority
 -	Micro task queues used for promises and have priority after the synchronous functions and it is part of JavaScript engine
-Example
+**Example**
+const promise = new Promise((resolve, reject) => {
+console.log(`Promise starts`)
+resolve(`Promise result`)
+console.log(`Promise ends`)
+})
+console.log(`Code starts`)
+promise.then(console.log)
+console.log(`Code ends`)
+
+**Result**
+Promise starts
+Promise ends
+Code starts
+Code ends
+Promise result
+
+here in the above example only the resolve part is asynchronos which makes the line to be excuted after the syncronos part
+
 
 2. 
 Sync functions can be converted to asynchronous functions by wrapping the codes in the timers, converting callback function to Async/await function, and using promises that has resolved or rejected state
