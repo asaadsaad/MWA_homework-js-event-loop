@@ -55,7 +55,7 @@ Code ends
 Promise result
 ```
 
-# 2
+## 2.
 A synchronous function may be converted to asynchronous function in several ways. One way would be wrapping your code inside a promise. Another way would be using call back functions to run your code and wrapping them in asynchronous functions such as setTimeout().
 
 
