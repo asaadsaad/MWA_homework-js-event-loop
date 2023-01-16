@@ -1,0 +1,42 @@
+1. The first question you will have to answer is explaining JS event loop, clarifying the synchronous and asynchronous parts, queues, priority, with examples. *Write your answer as if it were for a real interview.*
+
+The JS event loop is a while loop, that continously checks the stack and if the stack is empty, it dequeue the events that is at first of the queue(Macrotask Queue).
+The synchronous task is the task that runs one after completion of previous task in sequence.In the JS Engine, the code is executed in synchronous manner, 
+the events in main stack are performed synchronously, while the asynchronous tasks are handled using the help of Macro Task Queue. 
+When the asynchronous event is occured in the code the Web APIs push the event to the Queue according to the priority of the task. After executing all the synchronous 
+tasks in main stack, and the stack becomes empty the event loop dequeue the asynchronous task from queue and push it to stack one by one.
+The priority of asynchronous task depends on what type of task it is, if it is promises it has eager execution than other asynchronous task.
+
+(() => {
+    console.log('this is the first');
+    const promise = new Promise((resolve) => resolve(`From Promise`));
+
+    setTimeout(() => {
+      console.log('From setTimeOut');
+    }); 
+  
+    console.log('this is just a message');
+    promise.then((res)=>{
+        console.log(res);
+    })
+    
+  
+    console.log('this is the end');
+  
+  })();
+
+Output:
+this is the first
+this is just a message
+this is the end
+From Promise
+From setTimeOut
+
+Here, the synchronous events executed first and two asynchronous events are used but the promise has the eager execution so the result from promise is printed before the result from setTimeOut.
+
+
+2. The follow up question is how may we convert a sync operation/function to become asynchronous?
+Using setTimeout is the simplest approach to make a synchronous operation asynchronous. 
+The alternative is to make a promise and then, when it is fulfilled, return the result.
+
+
