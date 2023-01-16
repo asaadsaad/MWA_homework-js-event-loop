@@ -7,4 +7,7 @@ Javascript is able to handle code asynchronously through the use of callbacks, s
 
 2. The follow up question is how may we convert a sync operation/function to become asynchronous?
 
-Any synchronous operation can be made asynchronous either by wrapping it inside a setInterval or setTimeout. The other way could be wrapping the function inside a promise and calling the resolve or reject async operation provided by the callback inside promise method to resolve or reject results. The other way is to use async function which when used wraps the returned object inside of a promise. Which creates asynchronous code. 
+Any synchronous operation can be made asynchronous either by:
+1. wrapping it inside a setInterval or setTimeout.
+2. The other way could be wrapping the function inside a promise and calling the resolve or reject async operation provided by the callback inside promise method to resolve or reject results.
+3. The other way is to use async function which when used wraps the returned object inside of a promise. Which creates asynchronous code. 
