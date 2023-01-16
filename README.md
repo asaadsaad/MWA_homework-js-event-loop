@@ -3,7 +3,7 @@ You are in a technical interview for a fullstack engineer position:
 1. The first question you will have to answer is explaining JS event loop, clarifying the synchronous and asynchronous parts, queues, priority, with examples. *Write your answer as if it were for a real interview.*
 2. The follow up question is how may we convert a sync operation/function to become asynchronous?
 
-Answer
+**Answer**
 1. 
 -	JS event loop is a single-threaded loop that watches the call stack and checks if there's any code to run in the task queue. If it is empty, then it pushes callback function from microtask to the main stack to be executed.
 -	Asynchronous means more than one process running simultaneously whereas Synchronous means one process is executing at a time.
