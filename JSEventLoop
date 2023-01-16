@@ -1,0 +1,58 @@
+Question 1
+
+JS Event Loop is a while loop that takes function from Web API's queue and adds it to the JS engine's stack whenever the stack is empty.
+
+All synchronous functions are added to stack and exectuted before adding any asynchronous function. Here in the code below the line which logs the multiplication result is asynchronus as it is wrapped by setTimeout function. So, everything else executes before the function wrapped inside setTimeout.
+
+var a = 100;
+console.log(`a before any operation:${a}`);
+setTimeout(() => {
+  console.log(`a after multiplication:${a * 3}`);
+}, 0);
+console.log(`a after addition:${a + 100}`);
+
+
+Output:
+
+a before any operation:100
+a after addition:200
+a after multiplication:600
+
+
+Question 2
+-----------------------------
+
+console.log("code start");
+const a = 100;
+
+function operate(val) {
+  
+  val= val * 3;
+
+  return val;
+}
+
+const result = operate(a);
+console.log(`result after operation:${result}`);
+
+console.log("code end");
+
+
+We can make the above synchronus task asynchronus by making returning a promise instead of returning value itself.
+
+
+console.log("code start");
+const a = 100;
+
+const operate = (val) => {
+  return new Promise((resolve, reject) => {
+     val= val * 3;
+    return resolve(val);
+  });
+};
+
+operate(a).then((result)=>console.log(result));
+
+
+console.log("code end");
+
