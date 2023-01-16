@@ -12,23 +12,39 @@ You are in a technical interview for a fullstack engineer position:
 
 
 **Example**
-const promise = new Promise((resolve, reject) => {
+
+const promise = new Promise((resolve, reject)=>{
+
 console.log(`Promise starts`)
+
 resolve(`Promise result`)
+
 console.log(`Promise ends`)
+
 })
+
 console.log(`Code starts`)
+
 promise.then(console.log)
+
 console.log(`Code ends`)
 
+
+
 **Result**
+
 Promise starts
+
 Promise ends
+
 Code starts
+
 Code ends
+
 Promise result
 
-here in the above example only the resolve part is asynchronos which makes the line to be excuted after the syncronos part
+
+Here in the above example only the resolve part is asynchronos which makes the resolve line to be executed after the syncronous part
 
 
 2. 
