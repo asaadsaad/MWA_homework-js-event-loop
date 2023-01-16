@@ -1,0 +1,24 @@
+Question 1:
+Ans: Event loops are endlessly running loop whose only job is 
+to push the task from the macrotask queue (asynchronous operations) to the main call stack one at a time 
+when the stack is empty or there are no synchronous operations in the main stack. Event loop pushes the operation
+from the macrotask queue based on their occurance in the code (FIFO) to the main stack. 
+
+For example:
+console.log("Hello world")
+setTimeout(()=> console.log("Bye"),1000)
+console.log("Hello Human")
+
+Considering the example above, line number 1 executes but when it comes to line number 2 it adds the operation into 
+macrotask queue. Then the flow reaches to line 3 which also executes (synchronous). Once the main thread takes care 
+of these synchronous operation, event loop pushes the operation (line 2) into main stack which then executes synchronously.
+
+The priority in the program always goes to sync operations but when it comes to the event loop pushing an operation 
+to the main stack, its done on the first come first serve basis.
+
+
+Question 2:
+Ans: The most basic way of converting a sync operation to async is by using setTimeout. The other way
+is by creating a promise and returning the result once it is resolved. The result returned from the promise
+can be used by calling the function and chaining it with .then and .catch to get a result. The other way of handling
+such promise response is by using async and await in a function. This comes in handy when making API call.
