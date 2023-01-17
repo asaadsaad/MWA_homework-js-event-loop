@@ -1,0 +1,4 @@
+1. The event loop in JavaScript makes it possible to execute asynchronous code in the JavaScript engines. JavaScript engines have couple of common components.
+Memory heap and call stacks are responsible for synchronous execution of JS engine. Message queue and event loop are responsible for asynchronous execution of JS engine.
+Basically, event loop constantly checks if there is any new message in message queue, and if there is one, it will push it to call stack to process.
+2. First, we can use setTimeout to convert synchronous to asynchronous. Or we can use async/await keywords to make it asynchronous.
