@@ -1,4 +1,7 @@
 # MWA - Homework 01
-You are in a technical interview for a fullstack engineer position:
-1. The first question you will have to answer is explaining JS event loop, clarifying the synchronous and asynchronous parts, queues, priority, with examples. *Write your answer as if it were for a real interview.*
-2. The follow up question is how may we convert a sync operation/function to become asynchronous?
+Explain in detail:
+1. The JS event loop in the browser, clarify the synchronous and asynchronous parts, queues, and priority. 
+2. How may we convert a synchronous function to become asynchronous?
+3. What is the advantage of an asynchronous function?  And what problem does it resolve? Why you may need to create one?
+  
+*Support your answers with code examples.*
